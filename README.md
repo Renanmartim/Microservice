@@ -30,3 +30,19 @@ public class Author {
     // Getter and setters
 }
 </pre>
+
+<hr></hr>
+
+<h4> This is a valid example when sending a POST to the end point (http://localhost:8080/api/order) </h4>
+
+<pre>
+{
+    "orderLineItemsListDto" : [
+        {
+            "skuCode" : "Iphone",
+            "price" : 1200,
+            "quantity" : 1
+        }
+    ]
+}
+</pre>
