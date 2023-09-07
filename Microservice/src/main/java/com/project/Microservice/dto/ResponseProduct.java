@@ -8,8 +8,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RequestProduct {
+public class ResponseProduct {
 
+    private String id;
     private String name;
     private String description;
     private Long price;
