@@ -1,5 +1,6 @@
 package com.inventory.Inventory.service;
 
+import com.inventory.Inventory.dto.InventoryResponse;
 import com.inventory.Inventory.model.Inventory;
 import com.inventory.Inventory.repository.InventoryRepoistory;
 import lombok.RequiredArgsConstructor;
@@ -14,10 +15,19 @@ public class InventoryService {
 
     private final InventoryRepoistory inventoryRepoistory;
 
-    public boolean existSkuCode(String skucode) {
-        Optional<Inventory> inventory = inventoryRepoistory.findBySkucode(skucode);
+    public List<InventoryResponse> existSkuCode(List<String> skuCode) {
+        List<Inventory> inventory = inventoryRepoistory.findBySkucodeIn(skuCode);
 
-        return inventory.isPresent();
+        List<InventoryResponse> responseList = inventory.stream().map(this::mapToInventoryResponse).toList();
+
+        return responseList;
+    }
+
+    private InventoryResponse mapToInventoryResponse(Inventory inventory) {
+        return InventoryResponse.builder()
+                .skucode(inventory.getSkucode())
+                .isInStock(inventory.getQuantity() > 0)
+                .build();
     }
 
 }

@@ -4,11 +4,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/pom.xml" />
-=======
         <option value="$PROJECT_DIR$/Microservice/pom.xml" />
->>>>>>> 1ede7ed (Add packages: repository, service, model and dto)
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
