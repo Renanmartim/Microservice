@@ -24,7 +24,7 @@ public class OrderService {
 
     private final WebClient.Builder webClientBuilder;
 
-    public ResponseEntity<Order> saveOrder(OrderRequest orderRequest) throws Exception {
+    public String saveOrder(OrderRequest orderRequest) throws Exception {
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
 
@@ -59,7 +59,7 @@ public class OrderService {
 
 
 
-        return ResponseEntity.ok().body(order);
+        return "Order saved sucessfully!";
     }
 
 
